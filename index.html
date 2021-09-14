@@ -4,32 +4,9 @@
 
     <script src="main.js"></script>
     <script>
-     /*
-     const env = {
-       __memory_base: 0,
-       tableBase: 0,
-       memory: new WebAssembly.Memory({
-         initial: 256
-       }),
-       table: new WebAssembly.Table({
-         initial: 0,
-         element: 'anyfunc'
-       })
-     };
-     */
      Module.onRuntimeInitialized = function() {
-       console.log(ccall('test', 'number', [], []))
-       /*
-       WebAssembly.instantiateStreaming(fetch("main.wasm"), { env: env })
-                  .then(function(obj) {
-                    let box = document.getElementById("box");
-                    box.innerHTML = obj.instance.exports.test();
-                  })
-                  .catch(function(err) {
-                    aaa = err;
-                    console.log(err);
-                  });
-       */
+       test = cwrap('test', 'number', []);
+       console.log(test())
      }
     </script>
 
