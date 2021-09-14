@@ -6,7 +6,9 @@
     <script>
      Module.onRuntimeInitialized = function() {
        test = cwrap('test', 'number', []);
+       lua_test = cwrap('lua_test', 'number', []);
        console.log(test())
+       console.log(lua_test())
      }
     </script>
 

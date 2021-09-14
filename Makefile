@@ -11,4 +11,4 @@ lua:
 	$(MAKE) -C lua-5.4.0/
 
 main.wasm:	main.c
-	$(CC) $(CCFLAGS) -I./lua-5.4.0/ -L./lua-5.4.0/ -o main.js main.c #-llua
+	$(CC) $(CCFLAGS) -I./lua-5.4.0/ -L./lua-5.4.0/ -o main.js main.c -llua
